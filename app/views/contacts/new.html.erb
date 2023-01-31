@@ -1,0 +1,78 @@
+<br>
+<h1>Create Contact</h1>
+
+<%= form_with model: @contact, url: contact_new_path do |form| %>
+  <% if form.object.errors.any? %>
+    <div class="alert alert-danger">
+      <% form.object.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+    <%= form.hidden_field :user_id, :value => @currentuserid, readonly: true %>
+  <div class="mb-3">
+    <%= form.label :Title %>
+    <%= form.text_field :title, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label "First Name" %>
+    <%= form.text_field :firstname, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label "Middle Name" %>
+    <%= form.text_field :middlename, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label "Last Name" %>
+    <%= form.text_field :lastname, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label "Mobile Phone" %>
+    <%= form.text_field :mobilephone, class:"form-control", placeholder: "555-555-5555" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label "Home Phone" %>
+    <%= form.text_field :homephone, class:"form-control", placeholder: "555-555-5555" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :Email %>
+    <%= form.text_field :email, class:"form-control", placeholder: "name@email.com" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :Address %>
+    <%= form.text_field :address, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :City %>
+    <%= form.text_field :city, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :State %>
+    <%= form.text_field :state, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label "Zip Code" %>
+    <%= form.text_field :zipcode, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :Country %>
+    <%= form.text_field :country, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :Company %>
+    <%= form.text_field :company, class:"form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :Birthday %>
+    <%= form.text_field :birthday, class:"form-control", placeholder: "MM-DD-YYYY" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :Notes %>
+    <%= form.text_field :notes, class:"form-control" %>
+  </div>
+  
+  <div class="mb-3">
+    <%= form.submit "Create Contact", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<br>

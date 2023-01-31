@@ -1,0 +1,65 @@
+<br>
+<div class="d-flex align-items-left justify-content-left">
+ 
+    <h1>Contacts</h1>
+</div>
+<div class="d-flex align-items-left justify-content-left">
+    <br>
+    <!--b><%= link_to "New Contact", contact_new_path, class: "mb-3" %></b-->
+    <%= link_to "New Contact", contact_new_path, method: :new, class: "btn btn-primary" %>
+    &nbsp;
+    <%= button_to "Export Contacts", contact_export_path, method: :export, class: "btn btn-primary" %>
+</div>
+<br>
+<br>
+<% if @contactall %>
+  <table class="table table-sm table-striped ml-4" style="max-width: 100rem;">
+    <thead class="mb-3">
+        <!--th><%= link_to "UserId", :sort => "user_id" %> </th-->
+        <th><%= link_to "Title", :sort => "title" %> </th>
+        <th><%= link_to "First", :sort => "firstname" %> </th>
+        <th><%= link_to "Middle", :sort => "middlename" %> </th>
+        <th><%= link_to "Last", :sort => "lastname" %> </th>
+        <th><%= link_to "Mobile", :sort => "mobilephone" %> </th>
+        <th><%= link_to "Home", :sort => "homephone" %> </th>
+        <th><%= link_to "Email", :sort => "email" %> </th>
+        <th><%= link_to "Address", :sort => "address" %> </th>
+        <th><%= link_to "City", :sort => "city" %> </th>
+        <th><%= link_to "State", :sort => "state" %> </th>
+        <th><%= link_to "Zip", :sort => "zipcode" %> </th>
+        <th><%= link_to "Country", :sort => "country" %> </th>
+        <th><%= link_to "Company", :sort => "company" %> </th>
+        <th><%= link_to "Birthdate", :sort => "birthday" %> </th>
+        <th><%= link_to "Notes", :sort => "notes" %> </th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        <% @contactall.each do |contactThis| %>
+          <% if contactThis.user_id == @currentuserid %>
+            <tr>
+                <!--td><%= contactThis.user_id %></td-->
+                <td><%= contactThis.title %></td>
+                <td><%= contactThis.firstname %></td>
+                <td><%= contactThis.middlename %></td>
+                <td><%= contactThis.lastname %></td>
+                <td><%= contactThis.mobilephone %></td>
+                <td><%= contactThis.homephone %></td>
+                <td><%= contactThis.email %></td>
+                <td><%= contactThis.address %></td>
+                <td><%= contactThis.city %></td>
+                <td><%= contactThis.state %></td>
+                <td><%= contactThis.zipcode %></td>
+                <td><%= contactThis.country %></td>
+                <td><%= contactThis.company %></td>
+                <td><%= contactThis.birthday %></td>
+                <td><%= contactThis.notes %></td>
+                <td><b><%= link_to "Edit", contact_edit_path(contactID: contactThis.id), class: "justify-content-right" %></b></td>
+                <td><b><%= link_to "Delete", contact_delete_path(contactID: contactThis.id), class: "justify-content-right" %></b></td>
+            </tr>
+          <% end %>
+        <% end %>
+    </tbody>
+   </table>
+ <% end %>
+<br>

@@ -1,0 +1,24 @@
+<br>
+<b><%= link_to "Create User", sign_up_path %></b>
+<br>
+<h1>Sign In</h1>
+
+<%= form_with url: sign_in_path do |form| %>
+
+  <div class="mb-3">
+    <%= form.label :email %>
+    <br>
+    <%= form.text_field :email, class:"form-control", placeholder: "name@email.com" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :password %>
+    <br>
+    <%= form.password_field :password, class:"form-control" %>
+  </div>
+  
+  <div class="mb-3">
+    <%= form.submit "Sign In", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
+<br>

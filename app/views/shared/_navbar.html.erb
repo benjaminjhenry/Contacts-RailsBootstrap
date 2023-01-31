@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <%= image_tag("/Contacts_icon.svg.png", :size => "40x40") %>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Contacts", contact_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "About", about_path, class: "nav-link" %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if Current.user %>
+        <li class="nav-item">
+          <span class="nav-link">Logged in as: <%= link_to Current.user.email, password_edit_path %></span>
+        </li>
+        <!--li class="nav-item">
+          <%= button_to "Export Contacts", contact_export_path, method: :export, class: "btn btn-outline-secondary" %>
+        </li-->
+        <li class="nav-item">
+          <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-outline-secondary" %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign In/Create User", sign_in_path, class: "nav-link" %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

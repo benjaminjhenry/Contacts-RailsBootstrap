@@ -1,0 +1,88 @@
+<br>
+<h1>Edit Contact</h1>
+
+<%= form_with model: @contact, url: contact_update_path(contactID: @contact.id) do |f| %>
+  
+  <%= f.hidden_field :user_id, class:"form-control", :value => @currentuserid, readonly: true %>
+
+  <div class="mb-3">
+    <%= f.label :title %>
+    <br>
+    <%= f.text_field :title, class:"form-control", :value => @contact.title %>
+  </div>
+  <div class="mb-3">
+    <%= f.label "First Name" %>
+    <br>
+    <%= f.text_field :firstname, class:"form-control", :value => @contact.firstname %>
+  </div>
+  <div class="mb-3">
+    <%= f.label "Middle Name" %>
+    <br>
+    <%= f.text_field :middlename, class:"form-control", :value => @contact.middlename %>
+  </div>
+  <div class="mb-3">
+    <%= f.label "Last Name" %>
+    <br>
+    <%= f.text_field :lastname, class:"form-control", :value => @contact.lastname %>
+  </div>
+  <div class="mb-3">
+    <%= f.label "Mobile Phone" %>
+    <br>
+    <%= f.text_field :mobilephone, class:"form-control", :value => @contact.mobilephone %>
+  </div>
+  <div class="mb-3">
+    <%= f.label "Home Phone" %>
+    <br>
+    <%= f.text_field :homephone, class:"form-control", :value => @contact.homephone %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :email %>
+    <br>
+    <%= f.text_field :email, class:"form-control", :value => @contact.email %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :address %>
+    <br>
+    <%= f.text_field :address, class:"form-control", :value => @contact.address %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :city %>
+    <br>
+    <%= f.text_field :city, class:"form-control", :value => @contact.city %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :state %>
+    <br>
+    <%= f.text_field :state, class:"form-control", :value => @contact.state %>
+  </div>
+  <div class="mb-3">
+    <%= f.label "Zip Code" %>
+    <br>
+    <%= f.text_field :zipcode, class:"form-control", :value => @contact.zipcode %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :country %>
+    <br>
+    <%= f.text_field :country, class:"form-control", :value => @contact.country %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :company %>
+    <br>
+    <%= f.text_field :company, class:"form-control", :value => @contact.company %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :birthday %>
+    <br>
+    <%= f.text_field :birthday, class:"form-control", :value => @contact.birthday %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :notes %>
+    <br>
+    <%= f.text_field :notes, class:"form-control", :value => @contact.notes %>
+  </div>
+  
+  <div class="mb-3">
+    <%= f.submit "Edit Contact", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<br>
