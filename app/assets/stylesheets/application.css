@@ -85,6 +85,7 @@ body {
   line-height: 1.5;
   color: #212529;
   background-image: url("/background2-1.jpg");  
+  background-attachment: fixed;
   background-color: #cccccc;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
